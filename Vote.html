@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<script>
+   function Validate() {
+            if(!document.vote.firstname.value.match(/^[a-zA-Z]+$/))
+          { 
+   alert("Fill the first name");
+   return false;
+          }
+//else{
+//alert("Invalid data");
+
+           if(!document.vote.lastname.value.match(/^[a-zA-Z]+$/))
+          {
+       alert("Fill the Last Name");
+   return false;
+          }
+
+if(!document.vote.age.value.match(/^[0-9]+$/)|| (!document.vote.age.value>18))
+          {
+      alert("Fill the Age");
+      return false;
+          }
+var radio1 = document.getElementById('male').checked;
+var radio2 = document.getElementById('female').checked;
+var radio3 = document.getElementById('other').checked;
+if((radio1=="")&&(radio2=="")&&(radio3==""))
+{
+alert("select either one of the gender options");
+return false;
+  }
+return true;
+}
+</script>
+<title>Vote Registration Form </title>
+<style>
+ body{ 
+           background-color: lightyellow;
+       font-family :Times New Roman;
+        
+        }
+.srik{
+  text-align: center;
+padding:75px;
+}
+img{
+float:left;
+}
+</style>
+</head>
+<body>
+<marquee>     ***Right to Vote***    </marquee> <marquee> Fill the following details </marquee>
+<img src='http://i.mobofree.com/?u=http%3A%2F%2Flh5.ggpht.com%2F-hqCxFBXBFQo%2FVFcUD5-6rwI%2FAAAAAAAATE0%2Fr1v_S7AwUt4%2Fvoting_thumb.gif&w=600&h=1500'>
+<form class=srik name="vote" method="post" onsubmit="return Validate();">
+              
+<pre>First Name: <input type ="text" name="firstname" size="15"><br>
+   Last Name: <input type ="text" name="lastname" size="15"> <br>
+  Age: <input type ="int" name="age" size="3">  <br>
+Gender: <input type="radio" name="sex" id="male">MALE<input type= "radio" name="sex" id="female">FEMALE
+<input type="radio" name="sex" id="other">OTHER</pre><br>
+<input type="submit" value="submit"><br>
+</form>
+
+</body>
+</html>
